@@ -16,7 +16,7 @@ const Hero = () => {
         fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1', options)
             .then(res => res.json())
             .then(res => {
-                if(res.results && res.results.length > 0) {
+                if (res.results && res.results.length > 0) {
                     const randomIndex = Math.floor(Math.random() * res.results.length);
                     setMovies(res.results[randomIndex]);
                 }
@@ -24,7 +24,7 @@ const Hero = () => {
             .catch(err => console.error(err));
     }, []);
 
-    if(!movies){
+    if (!movies) {
         return <p>Loading....</p>
     }
 
@@ -37,9 +37,9 @@ const Hero = () => {
                     <Bookmark className='mr-2 w-4 md:w-5 md:h-5' /> Save for later
                 </button>
                 <Link to={`/movies/${movies.id}`}>
-                <button className='flex justify-center items-center bg-[#e50914] hover:bg-gray-200 text-white py-3 px-4 rounded-full cursor-pointer text-sm md:text-base'>
-                    <Play className='mr-2 w-4 md:w-5 md:h-5' /> Watch Now
-                </button>
+                    <button className='flex justify-center items-center bg-[#e50914] hover:bg-gray-200 text-white py-3 px-4 rounded-full cursor-pointer text-sm md:text-base'>
+                        <Play className='mr-2 w-4 md:w-5 md:h-5' /> Watch Now
+                    </button>
                 </Link>
             </div>
         </div>

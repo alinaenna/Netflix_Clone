@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     return (
         <nav className='bg-black text-gray-200 flex justify-between items-center p-4 h-20 md:text-[15px] font-medium text-nowrap'>
-            
+
             <Link to={"/"}>
-            <img src="/logo.png" alt="Logo" className='w-32 cursor-pointer brightness-125' />
+                <img src="/logo.png" alt="Logo" className='w-32 cursor-pointer brightness-125' />
             </Link>
 
             <ul className='hidden xl:flex space-x-6'>
@@ -25,8 +25,15 @@ const Navbar = () => {
                     <input type="text" className='bg-[#333333] px-4 py-2 rounded-full min-w-72 pr-10 outline-none' placeholder='Search' />
                     <Search className='absolute top-2 right-4 w-5 h-5' />
                 </div>
-                <button className='bg-[#e50914] px-5 py-2 rounded-full cursor-pointer text-white'>Get AI Movie Selections</button>
-                <button className='border border-[#333333] py-2 px-4 cursor-pointer'>Sign In</button>
+                <button className='bg-[#e50914] px-5 py-2 rounded-full cursor-pointer text-white'>
+                    Get AI Movie Selections
+                </button>
+
+                <Link to={"/signin"}>
+                    <button className='border border-[#333333] py-2 px-4 cursor-pointer'>
+                        Sign In
+                    </button>
+                </Link>
             </div>
         </nav>
     );
