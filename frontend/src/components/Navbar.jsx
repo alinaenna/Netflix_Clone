@@ -1,11 +1,14 @@
 import React from 'react'
-import { Link, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
         <nav className='bg-black text-gray-200 flex justify-between items-center p-4 h-20 md:text-[15px] font-medium text-nowrap'>
             
+            <Link to={"/"}>
             <img src="/logo.png" alt="Logo" className='w-32 cursor-pointer brightness-125' />
+            </Link>
 
             <ul className='hidden xl:flex space-x-6'>
                 <li className='cursor-pointer hover:text-[#e50914]'>Home</li>
